@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start1</title>
+</head>
+<style>
+    .class1{
+        color: red;
+    }
+</style>
+<body>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+            {% for message in messages %}
+<h1 class="class1">{{ message }}</h1>
+            {% endfor %}
+    {% endif %}
+{% endwith %}
+<h3>Your choice:
+{% if my_choice %}
+<img src="static/images/{{ my_choice }}.png" alt="Rock" style="max-width: 150px;">
+{% endif %}
+</h3>
+<h3>Computer choice:
+{% if pic %}
+<img src="static/images/{{ pic }}.png" alt="Scissor" style="max-width: 150px;">
+{% endif %}
+</h3>
+<a href="{{url_for('start')}}">Retry</a><br>
+<h3>My Score:
+{% if my_score %}
+    {{ my_score }}
+    {% endif %}
+</h3>
+<h3>Comp Score:
+{% if comp_score %}
+    {{ comp_score }}
+    {% endif %}
+</h3>
+<a href="{{url_for('index')}}">Restart</a><br>
+</body>
+</html>

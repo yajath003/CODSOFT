@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h1>This is the page for password generation</h1>
+<form method="POST">
+    <div align="center">
+        <h3>input here:</h3>
+        <input type="number" height="10" width="15" name="number" align="center" ></input>
+        <button type="submit">Generate</button>
+    </div>
+</form>
+<div align="center">
+    <h4>
+        {% if result %}
+        {{result}}
+        {% endif %}
+    </h4>
+</div>
+</body>
+</html>
